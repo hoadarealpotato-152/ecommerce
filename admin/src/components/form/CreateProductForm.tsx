@@ -134,7 +134,7 @@ const CreateProductForm = () => {
           autoComplete='off'
           variant='filled'
           onFinish={handleSubmitForm}
-          className='w-full lg:w-1/2 items-center'
+          className='w-full lg:w-1/2 items-center shadow-md rounded-xl p-8'
         >
           <Form.Item
             label='Tên sách'

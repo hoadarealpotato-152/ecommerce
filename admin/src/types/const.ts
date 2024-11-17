@@ -8,3 +8,6 @@ export const API_ROUTES = {
 };
 
 export const BOOK_ITEM_PER_PAGE = 20;
+
+
+export const MAX_IMAGES_ALLOWED = 3

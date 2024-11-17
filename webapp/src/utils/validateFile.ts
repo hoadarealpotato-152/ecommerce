@@ -17,7 +17,7 @@ export const validateFile = (file: File) => {
     return {
       isValid: false,
       message:
-        'Tệp không phải là định dạng ảnh được hỗ trợ. Vui lòng chọn đúng định dạng ảnh.',
+        'Tệp không phải là định dạng ảnh được hỗ trợ. Vui lòng chọn đúng định dang file ảnh.',
     };
   }
 
