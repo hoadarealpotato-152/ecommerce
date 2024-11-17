@@ -14,3 +14,5 @@ export type TMetaData = {
   limit: number;
   offset: number;
 };
+
+export type NotificationType = 'success' | 'info' | 'warning' | 'error';
