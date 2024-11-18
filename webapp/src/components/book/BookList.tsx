@@ -1,16 +1,16 @@
-import { Flex, Pagination } from "antd";
-import BookCard from "./BookCard";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { TBookListReturn } from "../../types/book";
-import { BOOK_ITEM_PER_PAGE } from "../../types/const";
-import LoadingScreen from "../loading/LoadingScreen";
-import NoResult from "./NoResult";
-import { getProductsList } from "../../api/products";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/configureStore";
-import { useDispatch } from "react-redux";
-import { updateBookState } from "../../store/book/bookSlice";
+import { Flex, Pagination } from 'antd';
+import BookCard from './BookCard';
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { TBookListReturn } from '../../types/book';
+import { BOOK_ITEM_PER_PAGE } from '../../types/const';
+import LoadingScreen from '../loading/LoadingScreen';
+import NoResult from './NoResult';
+import { getProductsList } from '../../api/products';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/configureStore';
+import { useDispatch } from 'react-redux';
+import { updateBookState } from '../../store/book/bookSlice';
 
 const BookList = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -20,7 +20,7 @@ const BookList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getBookList(0, "");
+    getBookList(0, '');
   }, []);
 
   const getBookList = async (pageNum: number, searchKey: string) => {
@@ -38,7 +38,7 @@ const BookList = () => {
             searchValue: searchKey,
           })
         );
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       }
     } catch (err) {
       console.log(err);
@@ -55,11 +55,11 @@ const BookList = () => {
 
   if (!isLoading && bookList.length === 0) {
     return (
-      <>
+      <Flex vertical className='w-full min-h-screen'>
         <NoResult />
         <Pagination
-          className="mt-8"
-          align="center"
+          className='mt-8'
+          align='center'
           pageSize={BOOK_ITEM_PER_PAGE}
           defaultCurrent={1}
           current={currentPage}
@@ -67,13 +67,13 @@ const BookList = () => {
           showSizeChanger={false}
           onChange={(current) => goPage(current)}
         />
-      </>
+      </Flex>
     );
   }
 
   return (
     <Flex vertical>
-      <Flex wrap gap={24} align="center">
+      <Flex wrap gap={24} align='center'>
         {isLoading ? (
           <LoadingScreen />
         ) : (
@@ -99,8 +99,8 @@ const BookList = () => {
       </Flex>
       {!isLoading && (
         <Pagination
-          className="mt-8"
-          align="center"
+          className='mt-8'
+          align='center'
           pageSize={BOOK_ITEM_PER_PAGE}
           defaultCurrent={1}
           current={currentPage}

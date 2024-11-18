@@ -1,10 +1,13 @@
-import BookList from "../components/book/BookList";
+import { Flex } from 'antd';
+import BookList from '../components/book/BookList';
+import Filter from '../components/filter/Filter';
 function Home() {
-    return (
-        <div className="px-24 py-8">
-            <BookList />
-        </div>
-    )
+  return (
+    <Flex>
+      <Filter />
+      <BookList />
+    </Flex>
+  );
 }
 
 export default Home;
